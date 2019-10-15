@@ -224,6 +224,15 @@ makeLinuxaarch64:
 	INCLUDE="$(ENVINCLUDE)" \
 	LIBS="$(LNXLIBS64)"
 
+makeLinuxunknown:
+	@make $(MKPARMS) RR=$(RELNUM) \
+	CC=$(LNXCC) \
+	BB=$(LNXcc) \
+	CFLAGS="$(ENVCFLAGS) $(LNXOPT)" \
+	BFLAGS="$(ENVCFLAGS) $(LNXOPT_B)" \
+	INCLUDE="$(ENVINCLUDE)" \
+	LIBS="$(LNXLIBS64)"
+
 Darwin:
 	@MACOSX_DEPLOYMENT_TARGET=10.5;\
 	make $(MKPARMS)  \
